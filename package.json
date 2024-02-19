@@ -7,16 +7,17 @@
   "private": true,
   "dependencies": {
     "@sap/cds": "^7",
-    "@sap/cds-mtxs": "^1.9",
-    "express": "^4",
-    "@sap/cds-hana": "^2"
+    "@sap/cds-hana": "^2",
+    "@sap/cds-mtxs": "^1.15.0",
+    "express": "^4"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^1",
     "@sap/cds-dk": "^7"
   },
   "scripts": {
-    "start": "cds-serve"
+    "start": "cds-serve",
+    "deploy": "cds deploy --to hana:MyHanaApp-1"
   },
   "cds": {
     "profile": "with-mtx-sidecar",

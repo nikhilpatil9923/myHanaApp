@@ -36,12 +36,6 @@ modules:
       - name: mtx-api
         properties:
           mtx-url: ${default-url}
-
-  - name: myHanaApp-db-deployer
-    type: hdb
-    path: gen/db
-    parameters:
-      buildpack: nodejs_buildpack
     requires:
       - name: myHanaApp-db
 
@@ -67,7 +61,7 @@ resources:
           onUpdateDependenciesAsync: true
           callbackTimeoutMillis: 300000 # Increase if your deployments are taking longer than that
   - name: myHanaApp-db
-    type: com.sap.xs.hdi-container
+    type: org.cloudfoundry.managed-service
     parameters:
-      service: hana
-      service-plan: hdi-shared
+      service: service-manager
+      service-plan: container
